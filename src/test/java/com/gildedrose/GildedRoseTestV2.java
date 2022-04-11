@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class GildedRoseTest {
+class GildedRoseTestV2 {
 
     @Test
     void foo() {
@@ -22,7 +22,7 @@ class GildedRoseTest {
     @Test
     void testQualityRandomName(){
         Item[] items = new Item[] { new Item("+5 Dexterity Vest", 10, 20) };
-        GildedRose app = new GildedRose(items);
+        GildedRoseV2 app = new GildedRoseV2(items);
         app.updateQuality();
         assertEquals(19, app.items[0].quality);
         assertEquals(9, app.items[0].sellIn);
@@ -39,7 +39,7 @@ class GildedRoseTest {
     @Test
     void testQualityRandomNameAndSellInPassed(){
         Item[] items = new Item[] { new Item("+5 Dexterity Vest", 0, 20) };
-        GildedRose app = new GildedRose(items);
+        GildedRoseV2 app = new GildedRoseV2(items);
         app.updateQuality();
         assertEquals(18, app.items[0].quality);
         assertEquals(-1, app.items[0].sellIn);
@@ -53,7 +53,7 @@ class GildedRoseTest {
     @Test
     void testQualityWhenNameAgedBrie(){
         Item[] items = new Item[] { new Item("Aged Brie", 0, 4) };
-        GildedRose app = new GildedRose(items);
+        GildedRoseV2 app = new GildedRoseV2(items);
         app.updateQuality();
         assertEquals(6, app.items[0].quality);
         assertEquals(-1, app.items[0].sellIn);
@@ -66,7 +66,7 @@ class GildedRoseTest {
     @Test
     void testQualityWhenNameAgedBrie2(){
         Item[] items = new Item[] { new Item("Aged Brie", 6, 4) };
-        GildedRose app = new GildedRose(items);
+        GildedRoseV2 app = new GildedRoseV2(items);
         app.updateQuality();
         assertEquals(5, app.items[0].quality);
         assertEquals(5, app.items[0].sellIn);
@@ -78,7 +78,7 @@ class GildedRoseTest {
     @Test
     void testQualityWhenNameBackstage(){
         Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 5, 4) };
-        GildedRose app = new GildedRose(items);
+        GildedRoseV2 app = new GildedRoseV2(items);
         app.updateQuality();
         assertEquals(7, app.items[0].quality);
         assertEquals(4, app.items[0].sellIn);
@@ -89,7 +89,7 @@ class GildedRoseTest {
     @Test
     void testQualityWhenNameBackstage2(){
         Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 12, 4) };
-        GildedRose app = new GildedRose(items);
+        GildedRoseV2 app = new GildedRoseV2(items);
         app.updateQuality();
         assertEquals(5, app.items[0].quality);
         assertEquals(11, app.items[0].sellIn);
@@ -102,7 +102,7 @@ class GildedRoseTest {
     @Test
     void testQualityWhenNameBackstage3(){
         Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 8, 56) };
-        GildedRose app = new GildedRose(items);
+        GildedRoseV2 app = new GildedRoseV2(items);
         app.updateQuality();
         assertEquals(56, app.items[0].quality);
         assertEquals(7, app.items[0].sellIn);
@@ -114,7 +114,7 @@ class GildedRoseTest {
     @Test
     void testQualityWhenNameBackstage4(){
         Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 0, 15) };
-        GildedRose app = new GildedRose(items);
+        GildedRoseV2 app = new GildedRoseV2(items);
         app.updateQuality();
         assertEquals(0, app.items[0].quality);
         assertEquals(-1, app.items[0].sellIn);
