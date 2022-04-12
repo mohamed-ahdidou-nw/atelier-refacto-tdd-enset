@@ -2,11 +2,9 @@ package com.gildedrose;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class GildedRoseTest {
+class GildedRoseRefactoredTest {
 
     @Test
     void assertQuality(){
@@ -20,7 +18,7 @@ class GildedRoseTest {
     void sellDatePassedQualityDegradestwice() {
         // given
         Item[] items = new Item[] { new Item("Any", -4, 3) };
-            GildedRose app = new GildedRose(items);
+            GildedRoseRefactored app = new GildedRoseRefactored(items);
         // when
         app.updateQuality();
         // then
@@ -34,7 +32,7 @@ class GildedRoseTest {
         Item[] items = new Item[] {
             new Item("Sulfuras, Hand of Ragnaros", 10, 1), // single item !
         };
-        GildedRose app = new GildedRose(items);
+        GildedRoseRefactored app = new GildedRoseRefactored(items);
         // when
         app.updateQuality();
         // then
@@ -52,7 +50,7 @@ class GildedRoseTest {
             new Item("Aged Brie", 10, 1)
         };
         // when
-        GildedRose app = new GildedRose(items);
+        GildedRoseRefactored app = new GildedRoseRefactored(items);
         app.updateQuality();
         // then
         assertEquals(2, app.items[0].quality);
@@ -75,7 +73,7 @@ class GildedRoseTest {
             // new Item("Aged Brie", 31, 13)
         };
         // when
-        GildedRose app = new GildedRose(items);
+        GildedRoseRefactored app = new GildedRoseRefactored(items);
         app.updateQuality();
         // then
         assertEquals(2, app.items[0].quality);
@@ -96,7 +94,7 @@ class GildedRoseTest {
     void assertLegendarySulfuras(){
         // given
         Item[] items = new Item[] { new Item("Sulfuras", 21, 12) };
-        GildedRose app = new GildedRose(items);
+        GildedRoseRefactored app = new GildedRoseRefactored(items);
         // when
         int rand = (int) Math.random()*177;
         while( rand-->0)
@@ -118,7 +116,7 @@ class GildedRoseTest {
             new Item("Backstage passes to a TAFKAL80ETC concert", 10, 12),
             new Item("Backstage passes to a TAFKAL80ETC concert", 3, 21),
         };
-        GildedRose app = new GildedRose(items);
+        GildedRoseRefactored app = new GildedRoseRefactored(items);
 
         // when
         app.updateQuality();
