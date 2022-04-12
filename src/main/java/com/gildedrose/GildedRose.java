@@ -59,4 +59,52 @@ class GildedRose {
             }
         }
     }
+
+
+
+    private void myUpdateitem1(Item it) {
+        if (it.quality < 50) {
+            it.quality ++;
+        }
+        if (it.sellIn < 11 && it.quality<50){
+            it.quality ++;
+            if (it.sellIn < 6) it.quality ++;
+        }
+        it.sellIn --;
+        if(it.sellIn<0){
+            it.quality = 0;
+        }
+    }
+    private void myUpdateitem2(Item it) {
+        if (it.quality < 50) {
+            it.quality ++;
+        }
+        it.sellIn --;
+        if ((it.sellIn < 0)&&(it.quality < 50)) {
+            it.quality ++;
+        }
+    }
+    private void myUpdateitem3(Item it) {
+        //do nothing following the rule
+    }
+    private void myUpdateitem4(Item it) {
+        if (it.quality > 0) it.quality --;
+        it.sellIn --;
+        if ( (it.sellIn < 0) && (it.quality > 0) ) it.quality --;
+    }
+
+    public void modifiedUpdateQuality() {
+        for (Item item : items) {
+            switch(item.name){
+                case "Backstage passes to a TAFKAL80ETC concert" :
+                    myUpdateitem1(item);
+                case "Aged Brie" :
+                    myUpdateitem2(item);
+                case "Sulfuras, Hand of Ragnaros" :
+                    myUpdateitem3(item);
+                default: myUpdateitem4(item);
+            }
+        }
+    }
+
 }
