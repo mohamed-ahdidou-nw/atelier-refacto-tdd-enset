@@ -16,7 +16,8 @@ class GildedRose {
                         items[i].quality = items[i].quality - 1;
                     }
                 }
-            } else {
+            }
+            else {
                 if (items[i].quality < 50) {
                     items[i].quality = items[i].quality + 1;
 
