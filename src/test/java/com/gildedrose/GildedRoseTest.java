@@ -157,6 +157,11 @@ class GildedRoseTest {
 
     }
 
+    /**
+     *  I think that the code needs some changes so that those instructions :
+     *      Quality increases by 2 when there are 10 days or less and by 3 when there are 5 days or less but
+     * 	    Quality drops to 0 after the concert
+     * 	be correct!*/
 /*
     @Test
     void qualityIncreasesBy2WhenTheSellInIsBetween10AND6(){}
