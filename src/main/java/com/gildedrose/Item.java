@@ -4,9 +4,9 @@ public class Item {
 
     public String name;
 
-    public int sellIn;
+    public int sellIn; //the number of days to sell the item
 
-    public int quality;
+    public int quality; //how valuable the item is
 
     public Item(String name, int sellIn, int quality) {
         this.name = name;
