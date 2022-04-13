@@ -51,6 +51,15 @@ class GildedRoseTest {
         assertTrue(app.items[0].quality > 50);
     }
 
+    // items sellIn
+    @Test
+    void itemSellInDecreaseTest(){
+        Item[] items = new Item[]{new Item("item", 3,6)};
+        RefactoredGildedRose app = new RefactoredGildedRose(items);
+        app.updateQuality();
+        assertEquals(app.items[0].sellIn, 2);
+    }
+
     // Aged Brie tests
     @Test
     void agedBrieQualityUpdateTest(){  //"Aged Brie" actually increases in Quality the older it gets

@@ -51,6 +51,15 @@ class RefactoredGildedRoseTest {
         assertTrue(app.items[0].quality > 50);
     }
 
+    // items sellIn
+    @Test
+    void itemSellInDecreaseTest(){
+        Item[] items = new Item[]{new Item("item", 3,6)};
+        RefactoredGildedRose app = new RefactoredGildedRose(items);
+        app.updateQuality();
+        assertEquals(app.items[0].sellIn, 2);
+    }
+
     // Aged Brie tests
     @Test
     void agedBrieQualityUpdateTest(){  //"Aged Brie" actually increases in Quality the older it gets
@@ -109,5 +118,24 @@ class RefactoredGildedRoseTest {
         app.updateQuality();
         assertEquals(app.items[0].quality, 0);
     }
+
+    // Conjured items Tests
+    @Test
+    void conjuredSellInNNQualityUpdateTest(){ // NN : not null
+        Item[] items = new Item[]{new Item("Conjured", 3,5)};
+        RefactoredGildedRose app = new RefactoredGildedRose(items);
+        app.updateQuality();
+        assertEquals(app.items[0].quality, 3);
+    }
+
+    @Test
+    void conjuredSellInNQualityUpdateTest(){ // N : null
+        Item[] items = new Item[]{new Item("Conjured", 0,5)};
+        RefactoredGildedRose app = new RefactoredGildedRose(items);
+        app.updateQuality();
+        assertEquals(app.items[0].quality, 1);
+    }
+
+
 
 }
