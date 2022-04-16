@@ -3,6 +3,7 @@ package com.gildedrose;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class GildedRoseTest {
 
@@ -11,7 +12,35 @@ class GildedRoseTest {
         Item[] items = new Item[] { new Item("foo", 0, 0) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertEquals("fixme", app.items[0].name);
+        assertEquals("foo", app.items[0].name);
     }
+    @Test
+    void qualityInf50(){
+        Item[] items = new Item[]{ new Item("Aged Brie" , 0 ,50)} ;
+        GildedRose app = new GildedRose(items) ;
+        app.updateQuality();
+        assertEquals(app.items[0].quality<=50,true);
+    }
+
+    @Test
+    void qualityNegative(){
+        Item[] items = new Item[]{ new Item("Backstage passes" , 5 ,0)} ;
+        GildedRose app = new GildedRose(items) ;
+        app.updateQuality();
+        assertTrue(app.items[0].quality>=0);
+
+    }
+
+    @Test
+    void SulfurasQualityTest(){
+        Item[] items = new Item[]{ new Item("Sulfuras, Hand of Ragnaros" , 9 ,12)} ;
+        GildedRose app = new GildedRose(items) ;
+        app.updateQuality();
+        assertEquals(12,app.items[0].quality);
+    }
+
+
+
+
 
 }
